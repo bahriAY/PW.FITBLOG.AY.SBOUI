@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDate;
+
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path = "/blog") // This means URL's start with /demo (after Application path)
@@ -19,11 +21,11 @@ public class MainController {
     /* POST */
     @GetMapping(path = "/posts") // Map ONLY GET Requests
     public @ResponseBody
-    String addNewPost(@RequestParam String post) {
+    String addNewPost(@RequestParam String post, String title) {
         // @ResponseBody means the returned String is the response, not a view password
         // @RequestParam means it is a parameter from the GET or POST request
-
         Posts n = new Posts();
+        n.setTitle(title);
         n.setContent(post);
         postsRepository.save(n);
         return "Saved";
