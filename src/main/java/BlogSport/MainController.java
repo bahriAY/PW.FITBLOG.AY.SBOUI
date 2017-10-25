@@ -18,7 +18,7 @@ public class MainController {
     private PostsRepository postsRepository;
 
 
-    /* POST */
+    /* POST the different components of post : title , content (image: later) */
     @GetMapping(path = "/posts") // Map ONLY GET Requests
     public @ResponseBody
     String addNewPost(@RequestParam String post, String title) {
@@ -31,7 +31,7 @@ public class MainController {
         return "Saved";
     }
 
-    /* GET */
+    /* GET the different components of a post. the latter are returned as a json file */
     @GetMapping(path = "/all")
     public @ResponseBody
     Iterable<Posts> getAllUsers() {
