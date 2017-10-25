@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.time.LocalDate;
-
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path = "/blog") // This means URL's start with /demo (after Application path)
